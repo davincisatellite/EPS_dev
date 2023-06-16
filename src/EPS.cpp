@@ -101,7 +101,7 @@ EPS::standard_reply EPS::system_reset(DWire &wire, uint8_t i2c_address) {
 
 }
 
-EPS::standard_reply EPS::cancel-operation(DWire &wire, uint8_t i2c_address) {
+EPS::standard_reply EPS::cancel_operation(DWire &wire, uint8_t i2c_address) {
     standard_reply reply;
 
     /* Write command to EPS */
