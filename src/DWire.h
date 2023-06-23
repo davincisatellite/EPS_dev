@@ -106,6 +106,7 @@ public:
     void begin( uint8_t );
 
     uint8_t read( void );
+    uint8_t * read( uint8_t );
 
     void onRequest( void (*)( void ) );
     void onReceive( void (*)( uint8_t ) );

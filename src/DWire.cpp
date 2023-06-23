@@ -528,6 +528,21 @@ uint8_t DWire::read( void )
 }
 
 /**
+ *  Reads multiple bytes from the rx buffer in little-endian order
+ */
+uint8_t * DWire::read( uint8_t byte_size )
+{
+    uint8_t[byte_size] data;
+
+    for (uint8_t i = 0; i < byte_size; ++i)
+    {
+        data[i] = read();
+    }
+
+    return data;
+}
+
+/**
  * Register the user's interrupt handler
  */
 void DWire::onRequest( void (*islHandle)( void ) ) 
