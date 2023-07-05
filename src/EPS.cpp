@@ -133,14 +133,15 @@ EPS::standard_reply EPS::cancel_operation(DWire &wire, uint8_t i2c_address) {
 
 }
 
-EPS::standard_reply EPS::watchdog(DWire &wire, uint8_t i2c_address) {
+
+EPS::standard_reply EPS::switch_to_safety_mode(DWire &wire, uint8_t i2c_address) {
     standard_reply reply;
 
     /* Write command to EPS */
     wire.beginTransmission(i2c_address);
-    wire.write(0x00);
+    wire.write(0x11);
     wire.write(0x06);
-    wire.write(0x06);
+    wire.write(0x32);
     wire.write(0x00);
 
     // delay
