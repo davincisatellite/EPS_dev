@@ -42,8 +42,8 @@ EPS::standard_reply EPS::no_operation(DWire &wire, uint8_t i2c_address) {
     /* Write command to EPS */
     wire.beginTransmission(i2c_address);
     wire.write(0x00);
-    wire.write(0x02);
     wire.write(0x06);
+    wire.write(0x02);
     wire.write(0x00);
 
     // delay
@@ -74,7 +74,7 @@ EPS::standard_reply EPS::system_reset(DWire &wire, uint8_t i2c_address) {
     /* Write command to EPS */
     wire.beginTransmission(i2c_address);
     wire.write(0x00);
-    wire.write(0x02);
+    wire.write(0x06);
     wire.write(0xAA);
     wire.write(0x00);
     wire.write(0xA6);
@@ -107,7 +107,7 @@ EPS::standard_reply EPS::cancel_operation(DWire &wire, uint8_t i2c_address) {
     /* Write command to EPS */
     wire.beginTransmission(i2c_address);
     wire.write(0x00);
-    wire.write(0x02);
+    wire.write(0x06);
     wire.write(0x04);
     wire.write(0x00);
 
@@ -139,7 +139,7 @@ EPS::standard_reply EPS::watchdog(DWire &wire, uint8_t i2c_address) {
     /* Write command to EPS */
     wire.beginTransmission(i2c_address);
     wire.write(0x00);
-    wire.write(0x02);
+    wire.write(0x06);
     wire.write(0x06);
     wire.write(0x00);
 
